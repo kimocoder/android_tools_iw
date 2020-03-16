@@ -1,0 +1,11 @@
+--- iw-5.4/Makefile.orig	2020-03-16 12:02:45.362932074 +0200
++++ iw-5.4/Makefile	2020-03-16 12:03:01.329726044 +0200
+@@ -104,7 +104,7 @@
+ ifeq ($(IW_ANDROID_BUILD),)
+ iw:	$(OBJS)
+ 	@$(NQ) ' CC  ' iw
+-	$(Q)$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -o iw
++	$(Q)$(CC) $(LDFLAGS) $(OBJS) $(LIBS) -lm -o iw
+ endif
+ 
+ check:
