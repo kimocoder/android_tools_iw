@@ -4,6 +4,12 @@ Latest 'iw' tool v5.4 for Android.
 This tool downloads and compiles the binary with Netlink by the use of Android NDK.
 
 
+* RECOMMENDED toolchain, Android NDK 11c
+  - Available for Linux from https://dl.google.com/android/repository/android-ndk-r11c-linux-x86_64.zip
+
+
+
+
 ### Get started compiling / installing
 
 1. Download the NDK 11c toolchain (tested working)
