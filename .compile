@@ -26,13 +26,13 @@ prefix="`pwd`/prefix"
 if ! [ -f "${prefix}/lib/libnl-3.a" ] ; then
     (
 	cd "$libnl_dir"
-	../android_buildenv.sh ./configure \
+	../build_env.sh ./configure \
 		--host=arm-linux-androideabi \
 		--enable-static --disable-shared \
 		--disable-pthreads --disable-cli \
 		--prefix=$prefix
-	../android_buildenv.sh make
-	../android_buildenv.sh make install
+	../build_env.sh make
+	../build_env.sh make install
     )
 fi
 
@@ -44,10 +44,14 @@ if ! [ -f "${iw_dir}/iw" ] ; then
 		touch ".patch.applied"
 	fi
 	export PKG_CONFIG_PATH="${prefix}/lib/pkgconfig"
-	../android_buildenv.sh make V=1
+	../build_env.sh make V=1
 	cp iw iw.stripped
-	../android_buildenv.sh sh -c "\${CROSS_COMPILE}strip -s iw.stripped"
+	../build_env.sh sh -c "\${CROSS_COMPILE}strip -s iw.stripped"
     )
 fi
 
+cp iw-5.4/iw build/ && cp iw-5.4/iw.stripped build/
+
+rm -rf iw-5.4/ && rm -rf libnl-3.2.25-rc1/
+rm -rf *.tar.gz && rm -rf *.tar.xz
 echo "*** Iw has been compiled, output files are iw and iw.stripped in $iw_dir"
