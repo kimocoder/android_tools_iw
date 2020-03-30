@@ -2,8 +2,8 @@
 
 build:
 	#source build_env.sh
-	#./build_env.sh
-	.compile
+	./build_all.sh
+	#.compile
 
 
 install:

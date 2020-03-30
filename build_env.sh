@@ -1,4 +1,5 @@
 #!/bin/sh
+
 NDK="/root/Android/Sdk/ndk/android-ndk-r11c"
 CC_DIR="$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin"
 SYSROOT="$NDK/platforms/android-21/arch-arm"
