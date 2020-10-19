@@ -4,7 +4,7 @@ set -e
 libnl_tgz="libnl-3.2.25.tar.gz"
 libnl_url="http://www.infradead.org/~tgr/libnl/files/$libnl_tgz"
 
-iw_txz="iw-5.4.tar.xz"
+iw_txz="iw-5.9.tar.xz"
 iw_url="https://kernel.org/pub/software/network/iw/$iw_txz"
 
 libnl_dir="${libnl_tgz%.tar.gz}"
