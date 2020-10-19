@@ -1,6 +1,6 @@
 ## android_tools_iw
 
-Latest 'iw' tool v5.4 for Android.
+Latest 'iw' tool v5.9 for Android.
 This tool downloads and compiles the binary with Netlink by the use of Android NDK.
 
 
