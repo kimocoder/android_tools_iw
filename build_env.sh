@@ -1,18 +1,16 @@
 #!/bin/sh
 
-NDK="/root/Android/Sdk/ndk/android-ndk-r11c"
-CC_DIR="$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin"
-SYSROOT="$NDK/platforms/android-21/arch-arm"
+CC_DIR="$NDK/toolchains/$FOL-4.9/prebuilt/linux-x86_64/bin"
 
-CROSS_COMPILE="$CC_DIR/arm-linux-androideabi-"
+CROSS_COMPILE="$CC_DIR/$ARCH-"
 CC="${CROSS_COMPILE}gcc"
 CXX="${CROSS_COMPILE}g++"
 LD="${CROSS_COMPILE}ld"
 
-CFLAGS="-Os -ggdb -fPIE --sysroot=$SYSROOT"
+CFLAGS="-Os -ggdb -static --sysroot=$SYSROOT"
 CXXFLAGS="$CFLAGS"
 CPPFLAGS="--sysroot=$SYSROOT"
-LDFLAGS="--sysroot=$SYSROOT -pie"
+LDFLAGS="--sysroot=$SYSROOT -static"
 
 export CROSS_COMPILE CC CXX LD CPPFLAGS CFLAGS CXXFLAGS LDFLAGS
 exec "$@"
